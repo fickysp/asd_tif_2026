@@ -12,10 +12,14 @@ public class testSinglyLinkedList {
         linkedList.addFirst(5);
         linkedList.addFirst(6);
         System.out.println(linkedList.get(2)); // menghasilkan nilai 3
+        // (fix soal: output seharusnya adalah 4 karena head=6 dan tail=1)
+
         System.out.println(linkedList.get(12)); //Terjadi exception error
         System.out.println(linkedList.indexOf(4));// menghasilkan 5
         System.out.println(linkedList.indexOf(10));// menghasilkan -1
         linkedList.printReverse(); // Menghasilkan 6,5,4,3,2,1
+        // (fix soal: output seharusnya adalah 1,2,3,4,5,6 karena head=6 dan tail=1)
+
         System.out.println(linkedList.remove(3)); // Menghasilkan True
         System.out.println(linkedList.remove(8)); // Menghasilkan False
         System.out.println(linkedList.toArray()); //Menghasilkan [6,5,4,3,2,1]
