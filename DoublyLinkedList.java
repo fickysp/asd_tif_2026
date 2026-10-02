@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class DoublyLinkedList implements LinkedList {
     private Node2P head, tail;
     int size = 0;
@@ -121,7 +119,7 @@ public class DoublyLinkedList implements LinkedList {
     public Object get(int index) {
         // TODO digunakan untuk mengembalikan data pada index ke-i dimulai dari head. Head memiliki index 0
         if (index >= size || index < 0) {
-            System.out.println("Index Melebihi Batas");
+            System.out.println("Exception: `Index tidak sesuai batas`");
             return null;
         }
         Node2P temp = head;
@@ -134,7 +132,7 @@ public class DoublyLinkedList implements LinkedList {
     @Override
     public int indexOf(Object targetData) {
         // TODO digunakan mencari kemunculan pertama targetData pada linked list dan mengembalikan indeksnya. Indeks dari head adalah 0. Jika tidak ada targetData pada linked list, kembalikan nilai -1 
-        return 0;
+        return -1;
     }
 
     @Override
@@ -145,7 +143,7 @@ public class DoublyLinkedList implements LinkedList {
             if (temp == head) {
                 System.out.print(temp.data);
             } else {
-                System.out.print(temp.data + " -> ");
+                System.out.print(temp.data + ",");
             }
             temp = temp.prev;
         }
