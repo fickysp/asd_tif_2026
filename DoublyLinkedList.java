@@ -132,6 +132,15 @@ public class DoublyLinkedList implements LinkedList {
     @Override
     public int indexOf(Object targetData) {
         // TODO digunakan mencari kemunculan pertama targetData pada linked list dan mengembalikan indeksnya. Indeks dari head adalah 0. Jika tidak ada targetData pada linked list, kembalikan nilai -1 
+        Node2P temp = head;
+        int i = 0;
+        while (temp != null) {
+            if (java.util.Objects.equals(temp.data, targetData)) {
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
         return -1;
     }
 
@@ -153,12 +162,34 @@ public class DoublyLinkedList implements LinkedList {
     @Override
     public boolean remove(Object targetData) {
         // TODO digunakan untuk mencari dan menghapus node dengan data=targetData pada linked list serta mengembalikan nilai True jika berhasil, dan False jika targetData tidak ada di linkedList
+        Node2P temp = head;
+        while (temp != null) {
+            if (java.util.Objects.equals(temp.data, targetData)) {
+                if (temp == head) {
+                    deleteFirst();
+                } else if (temp == tail) {
+                    deleteLast();
+                } else {
+                    temp.prev.next = temp.next;
+                    temp.next.prev = temp.prev;
+                    size--;
+                }
+                return true;
+            }
+            temp = temp.next;
+        }
         return false;
     }
 
     @Override
     public Object[] toArray() {
         // TODO digunakan untuk mendapatkan keseluruhan data pada node-node di linked list dalam bentuk array. Data-data pada array disusun secara urut mulai dari head sampai dengan tail.
+        Object[] arr = new Object[size];
+        Node2P temp = head;
+        for (int i = 0; i < size; i++) {
+            arr[i] = temp.data;
+            temp = temp.next;
+        }
         return null;
     }
 }
