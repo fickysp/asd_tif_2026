@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * testSinglyLinkedList
  */
@@ -16,12 +18,15 @@ public class testDoublyLinkedList {
 
         System.out.println(linkedList.get(12)); //Terjadi exception error
         System.out.println(linkedList.indexOf(4));// menghasilkan 5
+        // (fix soal: output seharusnya adalah 2 karena head=6 dan target data berada di index ke-2)
         System.out.println(linkedList.indexOf(10));// menghasilkan -1
         linkedList.printReverse(); // Menghasilkan 6,5,4,3,2,1
         // (fix soal: output seharusnya adalah 1,2,3,4,5,6 karena head=6 dan tail=1)
 
         System.out.println(linkedList.remove(3)); // Menghasilkan True
         System.out.println(linkedList.remove(8)); // Menghasilkan False
-        System.out.println(linkedList.toArray()); //Menghasilkan [6,5,4,3,2,1]
+        System.out.println(Arrays.toString(linkedList.toArray())); //Menghasilkan [6,5,4,3,2,1]
+        //menambahkan method Arrays.toString() untuk mencetak array tanpa looping
+        // (fix soal: output seharusnya adalah 6,5,4,2,1 karena data 3 sudah dihapus)
     }
 }
