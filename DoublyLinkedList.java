@@ -190,6 +190,6 @@ public class DoublyLinkedList implements LinkedList {
             arr[i] = temp.data;
             temp = temp.next;
         }
-        return null;
+        return arr;
     }
 }
